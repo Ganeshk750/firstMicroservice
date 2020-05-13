@@ -4,8 +4,9 @@ import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
-import org.springframework.data.annotation.Id;
+
 
 @Entity
 public class TourPackage {
