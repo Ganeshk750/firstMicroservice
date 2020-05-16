@@ -11,10 +11,11 @@ import java.io.Serializable;
  */
 @Embeddable
 public class TourRatingPk implements Serializable {
-    /**
+  
+	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 2608164230051548675L;
+	private static final long serialVersionUID = 1L;
 
 	@ManyToOne
     private Tour tour;
