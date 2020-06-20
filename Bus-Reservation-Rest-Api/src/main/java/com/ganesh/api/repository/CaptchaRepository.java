@@ -7,5 +7,4 @@ import com.ganesh.api.entity.Captcha;
 
 @Repository
 public interface CaptchaRepository extends JpaRepository<Captcha, Long> {
-
 }
