@@ -9,5 +9,4 @@ import com.ganesh.api.entity.User;
 public interface UserRepository extends JpaRepository<User, Long> {
     User findOneByEmail(String email);
     User findOneByActivationHash(String activationHash);
-    
 }

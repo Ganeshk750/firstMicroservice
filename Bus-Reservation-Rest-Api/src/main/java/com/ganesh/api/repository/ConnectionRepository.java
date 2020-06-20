@@ -7,5 +7,4 @@ import com.ganesh.api.entity.Connection;
 
 @Repository
 public interface ConnectionRepository extends JpaRepository<Connection, Long> {
-	
 }

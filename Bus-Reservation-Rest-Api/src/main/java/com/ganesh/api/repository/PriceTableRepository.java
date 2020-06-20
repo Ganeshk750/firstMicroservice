@@ -7,4 +7,5 @@ import com.ganesh.api.entity.PriceTable;
 
 @Repository
 public interface PriceTableRepository extends JpaRepository<PriceTable, Long> {
+	
 }
