@@ -41,33 +41,35 @@ public class SpringBootMicroserviceApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 	
-		       // Create  the Tour Package
-				createTourPackage();
-				long numOfPackages = tourPackageService.total();
-				
-				//Load the tour from an external Json File
-				createTours("ExploreCalifornia.json");
-				long numOfTours = tourService.total();
+//		       // Create  the Tour Package
+//				createTourPackage();
+//				long numOfPackages = tourPackageService.total();
+//				
+//				//Load the tour from an external Json File
+//				createTours("ExploreCalifornia.json");
+//				long numOfTours = tourService.total();
+		
+		    createTourAllPackages();
+	        createTours(importFile);
 	}
 
 	
-	/*
-	 * Initialize all the known tour package
-	 * 
-	 */
-	private  void createTourPackage() {
-		    tourPackageService.createTourPackage("BC", "Backpack Cal");
-	        tourPackageService.createTourPackage("CC", "California Calm");
-	        tourPackageService.createTourPackage("CH", "California Hot springs");
-	        tourPackageService.createTourPackage("CY", "Cycle California");
-	        tourPackageService.createTourPackage("DS", "From Desert to Sea");
-	        tourPackageService.createTourPackage("KC", "Kids California");
-	        tourPackageService.createTourPackage("NW", "Nature Watch");
-	        tourPackageService.createTourPackage("SC", "Snowboard Cali");
-	        tourPackageService.createTourPackage("TC", "Taste of California");
-	}
-	
-	  /**
+	/**
+     * Initialize all the known tour packages
+     */
+	private void createTourAllPackages(){
+        tourPackageService.createTourPackage("BC", "Backpack Cal");
+        tourPackageService.createTourPackage("CC", "California Calm");
+        tourPackageService.createTourPackage("CH", "California Hot springs");
+        tourPackageService.createTourPackage("CY", "Cycle California");
+        tourPackageService.createTourPackage("DS", "From Desert to Sea");
+        tourPackageService.createTourPackage("KC", "Kids California");
+        tourPackageService.createTourPackage("NW", "Nature Watch");
+        tourPackageService.createTourPackage("SC", "Snowboard Cali");
+        tourPackageService.createTourPackage("TC", "Taste of California");
+    }
+
+    /**
      * Create tour entities from an external file
      */
     private void createTours(String fileToImport) throws IOException {
@@ -83,8 +85,7 @@ public class SpringBootMicroserviceApplication implements CommandLineRunner {
                     importedTour.getDifficulty(),
                     importedTour.getRegion()));
     }
-    
-    
+
     /**
      * Helper class to import ExploreCalifornia.json
      */
@@ -119,8 +120,6 @@ public class SpringBootMicroserviceApplication implements CommandLineRunner {
 
         Region getRegion() { return Region.findByLabel(region); }
     }
-
-
 
 	
 }
