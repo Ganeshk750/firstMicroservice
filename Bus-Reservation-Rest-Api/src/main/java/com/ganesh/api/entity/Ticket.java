@@ -3,7 +3,8 @@ package com.ganesh.api.entity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
+//import javax.validation.constraints.NotEmpty;
+import org.hibernate.validator.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -20,7 +21,7 @@ public class Ticket {
     @NotNull
     private BigDecimal price;
     @NotNull
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm")
+    @JsonFormat(pattern="dd-MM-yyyy HH:mm")
     private Date reservationDate;
     @ManyToOne
     private User user;
