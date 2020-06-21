@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.security.core.userdetails.UserDetailsService;
 
+import com.ganesh.api.dto.UserDto;
 import com.ganesh.api.entity.User;
 
 public interface UserService extends UserDetailsService {

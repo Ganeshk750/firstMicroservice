@@ -1,5 +1,6 @@
 package com.ganesh.api.service;
 
+import com.ganesh.api.dto.CaptchaDto;
 import com.ganesh.api.entity.Captcha;
 
 public interface CaptchaService {
